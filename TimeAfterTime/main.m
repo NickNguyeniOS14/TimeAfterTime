@@ -35,6 +35,25 @@ int main(int argc, const char * argv[]) {
         NSHost *currentHost = [[NSHost alloc]init];
         NSString *name = [currentHost localizedName];
         NSLog(@"My computer name is %@",name);
+
+
+        NSDateComponents *comps = [[NSDateComponents alloc] init];
+        [comps setYear:1995];
+        [comps setMonth:1];
+        [comps setDay:19];
+
+        NSCalendar *g = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+
+        NSDate *dateOfBirth = [g dateFromComponents:comps];
+
+        double secondsSinceEarlierDate = [now timeIntervalSinceDate:dateOfBirth];
+
+        NSLog(@"Nick has lived %f seconds",secondsSinceEarlierDate);
+
+
+
+
+
     }
     return 0;
 }
