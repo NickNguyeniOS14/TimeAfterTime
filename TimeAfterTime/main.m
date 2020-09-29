@@ -15,6 +15,10 @@ int main(int argc, const char * argv[]) {
 
         double seconds = [now timeIntervalSince1970];
         NSLog(@"It has been %f seconds since the start of 1970.",seconds);
+
+        NSHost *currentHost = [[NSHost alloc]init];
+        NSString *name = [currentHost localizedName];
+        NSLog(@"My computer name is %@",name);
     }
     return 0;
 }
